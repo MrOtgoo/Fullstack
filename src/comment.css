@@ -1,0 +1,30 @@
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .comment {
+    border: 1px solid #cf0505;
+    padding: 10px;
+    margin: 10px;
+    background-color: #2eb040;
+  }
+  
+  .comment-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .comment-buttons button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .comment-buttons button:hover {
+    background-color: #005bb8;
+  }

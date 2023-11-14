@@ -39,7 +39,7 @@ function EditComment(props) {
       comment: InputValue,
     })
       .then((response) => {
-        console.log(response);
+        closeEditModal(); 
       })
       .catch((err) => {
         console.log(err);
@@ -56,19 +56,20 @@ function EditComment(props) {
         style={{
           width: "500px",
           height: "500px",
-          backgroundColor: "blue",
-          display: "flex",
+          border: "2px solid #33B2FF", color: "#B47E4C", borderRadius:"25px"
+          ,display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           gap: "20px",
+          color:"Brown"
         }}
       >
       <input value={InputValue} onChange={handleInput}/>
       </div>
       <div>
-      <button onClick={handleSaveButton}>save</button>
-      <button onClick={handleCancelButton}>cancel</button></div>
+      <button   style={{ color: "#33B2FF", border: '3px solid #33B2FF', background: "none", height: "20px", width: "50px", fontSize: "10px", borderRadius: "30px" }} onClick={handleSaveButton}>save</button>
+      <button     style={{ color: "#33B2FF", border: '3px solid #33B2FF', background: "none", height: "20px", width: "50px", fontSize: "10px", borderRadius: "30px" }} onClick={handleCancelButton}>cancel</button></div>
     </Modal>
   );
 }

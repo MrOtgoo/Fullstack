@@ -58,7 +58,7 @@ function ProductsCreate(props) {
       console.error('Error adding document: ', error);
     }
   };
-
+console.log(user)
   return (
     <Modal isOpen={openModal} style={customStyles} ariaHideApp={false}>
       <div style={{    backgroundColor:"#B5DBED", width: '500px', height: '500px', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
@@ -105,9 +105,8 @@ function ProductsCreate(props) {
         </div>
         <button onClick={handleSubmitButton} style={{border:"2px solid Black  " ,color:" black",background:"none", fontSize:"20px",borderRadius:"50px"}}>Submit</button>
         {submittedData && (
-          <div>
-            <h2>Submitted Data</h2>
-            <p>Title: {submittedData.title}</p>
+          <div>/
+            <p>.Title: {submittedData.title}</p>
             <p>Text: {submittedData.text}</p>
             <p>Image: {submittedData.image}</p>
           </div>

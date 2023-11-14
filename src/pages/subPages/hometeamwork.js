@@ -12,7 +12,7 @@ function HomeTeamwork(props) {
         display: "flex",
         position: "relative",
         justifyContent: "space-between",
-        background: "#F5F7FA",
+        background: "transparent",
         alignItems: "center",
         flexDirection: "column",
       }}
@@ -21,9 +21,9 @@ function HomeTeamwork(props) {
         <img src={MeetingJpg} height={"500px"} alt="Meeting" />
       </div>
       <div style={{ position: "absolute", top: 40, right: 30 }}>
-        <MeetingCalendar />
+        <MeetingCalendar />s
       </div>
-      <div style={{ background: "pink", width: "465px", height: "363px", marginRight:250, top:100 }}>
+      <div style={{ background: "transparent", width: "465px", height: "363px", marginRight:250, top:100 }}>
         <span style={{ fontSize: "60px", color: "black" }}>Your Hub for Team Work</span>
         <span style={{ fontSize: "15px", color: "black" }}>
           Give everyone you work with - inside and outside your company - a more productive way to stay in sync. Respond faster with emojis, keep conversations focused in channels, and simplify all your communication into one place.

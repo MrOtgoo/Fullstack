@@ -32,7 +32,7 @@ export const HomeTasks2 = () => {
           </div>
       
          
-          <div style={{background:"pink",width:"465px",height:"363px", top:100, Right:200}}>
+          <div style={{background:"transparent",width:"465px",height:"363px", top:100, Right:200}}>
           <span style={{fontSize:"60px",color:"black"}}>Your Hub for team work</span>
           <span style={{fontSize:"15px",color:"black"}}>Give everyone you work with- inside and outside your company-a more prodactive way to stay in sync Responst faster with emoji, keep, conversation focused in channels, and simplify all your communication into one place</span>
           </div>

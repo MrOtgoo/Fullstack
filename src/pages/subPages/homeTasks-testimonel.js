@@ -26,13 +26,14 @@ const HomeTestimonials = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        background:"#F5F7FA",
       }}
     >
       <div
         style={{
           width: "100%",
           maxWidth: "1080px",
-          backgroundColor: "red",
+        
           textAlign: "center",
           padding: "60px 0",
           position: "relative",
@@ -43,7 +44,7 @@ const HomeTestimonials = () => {
         </h1>
         <div
           style={{
-            backgroundColor: "blue",
+            backgroundColor: "transparent",
             width: "100%",
             overflowX: "hidden",
             whiteSpace: "nowrap",
@@ -64,7 +65,7 @@ const HomeTestimonials = () => {
                   minWidth: `${testimonialCardWidth}px`,
                   backgroundColor: "white",
                   height: "347px",
-                  border: "2px solid red",
+                  border: "2px solid #0073e6",
                   padding: "20px",
                   borderRadius: "8px",
                 }}

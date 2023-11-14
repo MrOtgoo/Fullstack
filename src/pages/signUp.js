@@ -91,11 +91,16 @@ const SignUp = () => {
   
 
   return (
-    <div className="container">
-      <h1 className="header">Get Started Now</h1>
+    <div className="container" style={{ display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    Color:"Blue"}}>
+      <h1 className="header" style={{color:"#007bff"}}>Get Started Now</h1>
       <form className="form">
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
+        <div className="form-group" style={{color:"#fff"}}>
+          <label htmlFor="name" >Name</label>
           <input
             id="name"
             type="text"
@@ -106,7 +111,7 @@ const SignUp = () => {
           <p className="error">{formErrors.name}</p>
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email" style={{color:"#007bff"}}>Email Address</label>
           <input
             id="email"
             type="email"
@@ -116,7 +121,7 @@ const SignUp = () => {
           />
           <p className="error">{formErrors.email}</p>
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{color:"#007bff"}}>
           <label htmlFor="password">Password</label>
           <input
             id="password"
@@ -127,7 +132,7 @@ const SignUp = () => {
           />
           <p className="error">{formErrors.password}</p>
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{color:"#007bff"}}>
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
             id="confirmPassword"
@@ -146,7 +151,7 @@ const SignUp = () => {
             checked={formValues.checkbox}
             onChange={handleInput}
           />
-          <label htmlFor="checkbox">Agree to terms and conditions</label>
+          <label htmlFor="checkbox" style={{color:"black"}}>Agree to terms and conditions</label>
           <p className="error">{formErrors.checkbox}</p>
         </div>
         <button className="sign-button" onClick={handleSignUp}>

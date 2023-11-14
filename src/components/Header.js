@@ -22,7 +22,7 @@ const Header = (props) => {
   };
 
   const handleProfilePage = () => {
-    navigate("/profiles");
+    navigate("/ProfilePage");
   };
 
   const handleServicesPage = () => {
@@ -30,10 +30,10 @@ const Header = (props) => {
   };
 
   const navbarItems = [
-    { name: "Products", onclick: handleProductsPage },
-    { name: "Services", onclick: handleServicesPage }, 
+    { name: "Blogs", onclick: handleProductsPage },
+    { name: "Message", onclick: handleServicesPage }, 
     { name: "Contact", onclick: handleContactPage },
-    { name: "Profile", onclick: handleProfilePage },
+    { name: "Quiz", onclick: handleProfilePage },
   ];
 
   return (

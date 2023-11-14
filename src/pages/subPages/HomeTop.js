@@ -18,7 +18,7 @@ const TitleContainer = styled.div`
   height: 100px;
   display: flex;
   justify-content: center;
-  background: #0073e6;
+  background: transparent;
   position: relative;
   margin-top: 3rem;
 `;
@@ -28,7 +28,7 @@ const SubTitleContainer = styled.div`
   height: 100px;
   display: flex;
   justify-content: center;
-  background: #4caf50;
+  background: #transparent;
   position: relative;
   margin-top: 3rem;
 `;

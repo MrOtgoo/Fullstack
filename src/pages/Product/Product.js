@@ -7,6 +7,9 @@ import styled from 'styled-components';
 import DeleteIcon from '../../image/trash.png'
 import edit from "../../image/edit2.png"
 import EditComment from "./editComment";
+import Comment from "./Comments";
+
+
 
 
 const Container = styled.div`
@@ -28,6 +31,7 @@ const Product = (props) => {
   const { user } = props;
   const { id } = useParams();
   const selectedBlogId = id;
+  
 
   const [blogData, setBlogData] = useState({});
   const [commentsData, setCommentsData] = useState([]);
@@ -94,58 +98,49 @@ const Product = (props) => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      await deleteDoc(doc(CommentsCollection, commentId));
+      await deleteDoc(doc(blogsCollection,));
     } catch (error) {
       console.error(error);
     }
   };
+  
  
-
-  return (
-    <div style={{background:'white'}}>
-      {loading && <div>Loading...</div>}
-      {!loading && !blogData ? (
-        <div>Blog not found</div>
-      ) : (
-        <div>
-          <Header darkTheme user={user} />
-          <div style={{paddingTop:"50px", height:"700px",width:"1000px", display:"flex",paddingLeft:"100px", } }>
-          <Container style={{border:"2px solid #33B2FF", color:"#B47E4C"}} >
-            <div>{blogData.title}</div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ paddingLeft: "20px" }}>{blogData.text}</span>
-              <span style={{ paddingLeft: "20px" }}>{blogData.blogParagraph}</span>
+console.log(blogData)
+return (
+  <div style={{ background: 'white' }}>
+    {loading && <div>Loading...</div>}
+    {!loading && !blogData ? (
+      <div>Blog not found</div>
+    ) : (
+      <div>
+        <Header darkTheme user={user} />
+        <div style={{ border: "1px solid black" }}>
+          <div style={{ paddingTop: "50px", height: "700px", width: "1000px", display: "flex", paddingLeft: "100px" }}>
+            <Container style={{ border: "2px solid #33B2FF", color: "#B47E4C" }}>
+              <div>{blogData.title}</div>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <span style={{ paddingLeft: "20px" }}>{blogData.text}</span>
+                <span style={{ paddingLeft: "20px" }}>{blogData.blogParagraph}</span>
+              </div>
+            </Container>
+            <div>
+              <textarea
+                style={{ borderRadius: "50px", border: "2px solid #33B2FF", color: "#B47E4C" }}
+                placeholder="Leave your comment"
+                onChange={handleInputValue}
+                value={inputValue}
+              />
+              <button onClick={handleCommentButton} style={{ color: "#33B2FF", border: '3px solid #33B2FF', background: "none", height: "30px", width: "100px", fontSize: "20px", borderRadius: "30px" }}>Comment</button>
             </div>
-          </Container>
-          <div>
-            <textarea
-              style={{borderRadius:"50px",border:"2px solid #33B2FF",color:"#B47E4C"}}
-              placeholder="Leave your comment"
-              onChange={handleInputValue}
-              value={inputValue}
-            />
-            <button onClick={handleCommentButton} style={{color:"#33B2FF",border:'3px solid #33B2FF',background:"none",height:"30px",width:"100px" ,fontSize:"20px",borderRadius:"30px"}}>Comment</button>
-          </div>
-          <div style={{ textAlign: "center"}}>
-            {commentsData.map((comment, index) => (
-              <CommentContainer key={index} style={{border:"2px solid #33B2FF", borderRadius:"30px", color:"#B47E4C"}}>
-                {comment.comment}
-                {comment.userId === user.uid && (
-                  <div>
-                    <button> <img src={edit} alt="" width="25px" height="20px"/></button>
-                    <button style={{border:'none', background:"none"}} onClick={() => handleDeleteComment(comment.commentId)}>
-                     <img src={DeleteIcon} alt="" width="25px" height="20px" style={{borderRadius:"50px" ,}}/>
-                     </button>
-                  </div>
-                )}
-              </CommentContainer>
-            ))}
+            <div style={{ textAlign: "center" }}>
+              <Comment userId={user.uid} Data={commentsData} />
             </div>
           </div>
         </div>
-      )}
-    </div>
-  );
+      </div>
+    )}
+  </div>
+);
 };
 
 export default Product;

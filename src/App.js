@@ -3,7 +3,7 @@ import './App.css';
 import Login from './pages/login';
 import SignUp from './pages/signUp';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Auth, blogsCollection } from './firebase/firebase';
+import { Auth, blogsCollection, userCollaction } from './firebase/firebase';
 import Header from './components/Header';
 import ProductsPage from './pages/productsPage';
 import ServicesPage from './pages/servicesPage';
@@ -47,11 +47,12 @@ function App() {
           <Route path="/products/:id" element={<Product user={user} />} />
           <Route path="/contact" element={<ContactPage user={user} />} />
           <Route path='/ServicesPage' element={<ServicesPage user={user} />} />
+          <Route path="/ProfilePage" element={<ProfilePage user={user} />} />
         </Routes>
       )}
       {!isUserLoggedIn && (
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/Login" element={<Login />} />
           <Route path="/Sign-Up" element={<SignUp />} />
           <Route path="/contact" element={<ContactPage />} /> 
         </Routes>
@@ -60,6 +61,6 @@ function App() {
     </div>
   );
 }
-
+console.log(userCollaction)
 export default App;
 

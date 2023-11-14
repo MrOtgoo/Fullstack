@@ -86,6 +86,7 @@ const Login = () => {
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
+    Color:"Blue"
   };
 
   const formStyle = {
@@ -113,6 +114,11 @@ const Login = () => {
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: "20px",
   };
 
   const errorStyle = {
@@ -122,7 +128,7 @@ const Login = () => {
 
   return (
     <div style={containerStyle}>
-      <h1>Sign In</h1>
+      <h1 style={{color:"#007bff"}}>Sign In</h1>
       <form style={formStyle}>
         <div>
           <input
@@ -155,6 +161,7 @@ const Login = () => {
           />
           Show Password
         </label>
+        <div style={{flexDirection:"column" ,justifyContent:"space between",display:"flex"}}>
         <button style={buttonStyle} onClick={handleSignIn}>
           Sign In
         </button>
@@ -163,7 +170,7 @@ const Login = () => {
         </button>
         <button style={buttonStyle} onClick={handleGoogleSignIn}>
           Sign with Google
-        </button>
+        </button></div>
         <p style={errorStyle}>{formErrors.firebase}</p>
       </form>
     </div>
